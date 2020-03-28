@@ -26,6 +26,16 @@ services:
       - ./sonarqube/extensions:/opt/sonarqube/extensions
       - ./sonarqube/logs:/opt/sonarqube/logs
       - ./sonarqube/data:/opt/sonarqube/data
+ # nexus:
+    #image: 'sonatype/nexus3'
+   # container_name: nexus3
+   # hostname: nexus3
+   # networks: 
+   #   - net_integration
+   # ports: 
+   #   - 8081:8081
+   # volumes:
+  #    - "nexus-data:/nexus-data"
 
 networks:
   net_integration:
