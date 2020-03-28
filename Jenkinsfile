@@ -2,10 +2,8 @@
 
 pipeline {
     agent any
-    Maven mvn = new MavenWrapper(this)
-    String jacoco = "org.jacoco:jacoco-maven-plugin:0.8.1"
     tools {
-        maven 'apache-maven-3.6.3' 
+        maven 'maven' 
     }
     stages {
         stage("Code Checkout") {
@@ -16,12 +14,8 @@ pipeline {
               }
         stage("Building") {
             steps {
-                sh "mvn 'clean package -DskipTests'"
+                sh "mvn clean package -DskipTests"
                 }
-            }
-                stage("Tests") {
-            steps {
-               mvn "${jacoco}:prepare-agent test ${jacoco}:report"
             }
         }
   stage('SonarQube analysis') {
