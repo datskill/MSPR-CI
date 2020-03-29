@@ -36,6 +36,7 @@ pipeline {
                         sh "mvn checkstyle:check"
                         recordIssues(tools: [checkStyle(reportEncoding: 'UTF-8')])
                     }
+        }
           stage('SonarQube analysis') {
       steps {
     withSonarQubeEnv(credentialsId: '', installationName: 'sonarqube') { // You can override the credential to be used
@@ -44,4 +45,4 @@ pipeline {
     }
   }
 }
-}
+
