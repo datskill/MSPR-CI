@@ -14,8 +14,7 @@ pipeline {
               }
         stage("Building") {
             steps {
-                sh "mvn clean package"
-                sh 'mvn test'
+                sh "mvn clean package -DskipTests"
                 junit '**/build/test-results/test/*.xml'
                 }
             }
