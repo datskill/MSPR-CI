@@ -28,7 +28,7 @@ pipeline {
         stage("Building") {
             steps {
                 sh "mvn clean package -DskipTests"
-                junit '**/build/test-results/test/*.xml'
+                //junit '**/build/test-results/test/*.xml'
                 }
             }
           stage('SonarQube analysis') {
