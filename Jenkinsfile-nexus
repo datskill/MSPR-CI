@@ -1,4 +1,4 @@
-// #!groovy
+#!groovy
 
 pipeline {
     agent any
@@ -31,6 +31,14 @@ pipeline {
                 //junit '**/build/test-results/test/*.xml'
                 }
             }
+        stage("Generating Checkstyles") {
+            steps {
+                sh "mvn checkstyle:checkstyle"
+        def checkstyle = scanForIssues tool: [$class: 'CheckStyle'], pattern: '**/target/checkstyle-result.xml'
+        publishIssues issues:[checkstyle]
+            }
+            
+        }
           stage('SonarQube analysis') {
       steps {
     withSonarQubeEnv(credentialsId: '', installationName: 'sonarqube') { // You can override the credential to be used
@@ -38,7 +46,7 @@ pipeline {
       }
     }
   }
-   stage("publish to nexus") {
+   stage("Publish to Nexus OSS") {
               steps {
                   script {
                       // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
