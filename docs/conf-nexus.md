@@ -1,4 +1,4 @@
-<img src="https://github.com/datskill/MSPR-CI/blob/master/images/nexus3.png" width="100">
+<img src="https://github.com/datskill/MSPR-CI/blob/master/images/nexus3.png" width="200">
 
 # Configuration de Nexus Repository OSS
 
