@@ -10,7 +10,7 @@ Rendez-vous à l'adresse : http://localhost:9000/
 
 - **Mots de passe** : `admin`
 
-- Nous allons installer les plugins **SonarJS** & **SonarTS** pour que Sonar puisse analyser notre code React - Typescript
+- Nous allons installer le plugin **SonarJava** pour que Sonar puisse analyser notre code Java
 
 - Dans la barre de navigation, cliquez sur "**Administration**"
 
@@ -19,25 +19,6 @@ Rendez-vous à l'adresse : http://localhost:9000/
 - Dans le barre de recherche du Marketplace, recherchez "**SonarJava**"
 
 - Cliquez sur "**Installer**", attendez que l'installation finisse puis rendez-vous sur la page d'accueil de SonarQube
-
-- Cliquez sur "**Create New Project**"
-
-- Dans "**project Key**", rentrez "**maintenance-back**"
-
-- Cliquez sur le bouton "**Set up**"
-
-
-- Dans "**Generate a token**", entrez "**maintenance-back"**
-
-- Pour la question "**What's your project's main language**", répondez "**Java**"
-
-- Sélectionnez "**Maven**" pour le type du projet Java
-
-- Exécutez un build du projet sur IntelliJ
-
-- Copier/Coller la commande SonarQube et éxécuter la à la racine du projet. (Il vous faudra avoir **Sonar-Scanner** d'installer sur votre ordinateur)
-
-Aprés avoir éxécuter avec succés la commande de SonarQube, le projet devrait apparaitre sur la page d'accueil de SonarQube. 
 
 
 SonarQube est maintenant configuré. Nous allons créer un Token sur Sonar pour que Jenkins et Sonar puissent communiquer entre eux. 
@@ -60,7 +41,7 @@ Retournez dans Jenkins
 
 - Dans "**Secret**", coller la clé précédemment copié sur Sonar
 
-- Dans "**Id**", rentrez "**maintenance-back**"
+- Dans "**Id**", rentrez "**sonar-server**"
 
 - Laissez "Description" vide
 
@@ -71,6 +52,3 @@ Retournez dans Jenkins
 - Cliquez sur "**Save**" puis "**Apply**"
 
 Maintenant, SonarQube pourra envoyer le résultat de l'analyse de code à Jenkins. 
-
-Jenkins et SonarQube sont maintenant configurés. Si vous voulez en savoir plus concernant le **Dockerfile**, **Docker-Compose,** **JenkinsFile**, **Sonar-Properties**, vous pouvez vous rendre dans l'annexe pour une description des fichiers.
-
