@@ -28,7 +28,7 @@ pipeline {
         stage("Building") {
             steps {
                 sh "mvn clean package"
-                junit '**/build/test-results/test/*.xml'
+                junit '**/target/surefire-reports/*xml'
                 }
             }
         stage('Checkstyle') {
