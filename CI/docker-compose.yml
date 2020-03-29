@@ -36,6 +36,20 @@ services:
       - 8081:8081
     volumes:
       - "nexus-data:/nexus-data"
+  mysql-test:
+    image: mysql:5.7
+    container_name: mysql-test
+    hostname: mysql-test
+    networks:
+      - net_integration
+    volumes:
+      - "./.mysql-data/db:/var/lib/mysql"
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: preudhomme
 
 networks:
   net_integration:

@@ -1,6 +1,7 @@
 ## CI
 CI/sonarqube
 CI/jenkins
+CI/.mysql-data
 
 ## Java Sources
 
