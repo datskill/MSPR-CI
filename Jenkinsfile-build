@@ -25,7 +25,7 @@ pipeline {
                 url: 'https://github.com/datskill/MSPR-CI.git'
                   }
               }
-        stage ("Create and start MySQL) {
+        stage("Create and start MySQL) {
             steps {
                 sh "docker pull mysql:5.7"
                 sh "docker run -p 3306:3306 --name preudhomme -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=preudhomme -d mysql:5.7"
