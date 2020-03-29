@@ -1,6 +1,6 @@
-# OpenData Paris API
+# Preudhomme ERP
 
-Partie back du projet OpenData Paris API
+Projet ERP PreudHomme
 
 ## Sommaire
 
@@ -10,15 +10,14 @@ Partie back du projet OpenData Paris API
 - [Configuration de l'environnement de développement](#intégration-continue)
 - [Configurer Jenkins](#jenkins)
 - [Configurer SonarQube](#sonarqube)
-- [Effectuer une maintenance](#maintenance)
 
 ## Pour bien démarrer sur le projet
 
 
 ### Démarrer le projet
 
-- Cloner le projet avec git `git clone https://github.com/AntoineTohan/maintenance-back.git`
-- Positionnez vous dans le répertoire du projet `cd maintenance-back`
+- Cloner le projet avec git `git clone https://github.com/datskill/MSPR-CI`
+- Positionnez vous dans le répertoire du projet `cd MSPR-CI`
 - Cliquer sur "Run" dans IntelliJ pour démarrer le projet. (Assurez-vous d'avoir installer les prérequis dans "Configurer un environnement de développement)
 ## Procédure GIT
 
@@ -101,6 +100,7 @@ Notre intégration continue se compose des outils suivants :
 - Docker
 - Jenkins
 - SonarQube
+- Nexus OSS Repository
 
 Afin de pouvoir travailler dans de bonnes conditions, veillez à suivre les différentes documentations disponible afin d'avoir un environnement de développement optimal. 
 
@@ -114,9 +114,5 @@ Afin de pouvoir travailler dans de bonnes conditions, veillez à suivre les diff
 
 ## SonarQube
 [Installation et configuration de SonarQube](docs/conf-sonar.md)
-
-## Maintenance
-
-[Effectuer une maintenance de l'application](docs/maintenance.md)
 
 
