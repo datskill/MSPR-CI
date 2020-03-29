@@ -1,3 +1,5 @@
+![Jenkins](https://github.com/datskill/MSPR-CI/blob/master/images/jenkins.png)
+
 Dans un soucis d'automatisation et de rapidité, nous avons crée notre propre image Jenkins qui sera construit dans un Docker-Compose qui est aussi produit par nos soins.
 
 ### Construction de l'image Jenkins
