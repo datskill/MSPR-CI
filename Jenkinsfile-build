@@ -36,19 +36,12 @@ pipeline {
                 sh "mvn checkstyle:checkstyle pmd:pmd pmd:cpd com.github.spotbugs:spotbugs-maven-plugin:3.1.7:spotbugs"
                 recordIssues(
                         enabledForFailure: true, aggregatingResults: false,
-                        tools: [java(), checkStyle(pattern: '**/target/checkstyle-result.xml', reportEncoding: 'UTF-8')]
-                )
-                recordIssues(
-                        enabledForFailure: true, aggregatingResults: false,
-                        tools: [java(), pmdParser(pattern: '**/target/pmd.xml', reportEncoding: 'UTF-8')]
-                )
-                recordIssues(
-                        enabledForFailure: true, aggregatingResults: false,
-                        tools: [java(), cpd(pattern: '**/target/cpd.xml', reportEncoding: 'UTF-8')]
-                )
-                recordIssues(
-                        enabledForFailure: true, aggregatingResults: false,
-                        tools: [java(), spotBugs(pattern: '**/target/spotbugsXml.xml')]
+                        tools: [
+                                [tool:[java(), checkStyle(pattern: '**/target/checkstyle-result.xml', reportEncoding: 'UTF-8')]],
+                                [tool:[java(), pmdParser(pattern: '**/target/pmd.xml', reportEncoding: 'UTF-8')]],
+                                [tool: [java(), cpd(pattern: '**/target/cpd.xml', reportEncoding: 'UTF-8')]],
+                                [tool: [java(), spotBugs(pattern: '**/target/spotbugsXml.xml')]]
+                        ]
                 )
             }
         }
