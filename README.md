@@ -10,6 +10,7 @@ Projet ERP PreudHomme
 - [Configuration de l'environnement de développement](#intégration-continue)
 - [Configurer Jenkins](#jenkins)
 - [Configurer SonarQube](#sonarqube)
+- [Configurer Nexus](#nexus)
 
 ## Pour bien démarrer sur le projet
 
@@ -115,4 +116,6 @@ Afin de pouvoir travailler dans de bonnes conditions, veillez à suivre les diff
 ## SonarQube
 [Installation et configuration de SonarQube](docs/conf-sonar.md)
 
+## Nexus
+[Installation et configuration de Nexus](docs/conf-nexus.md)
 
