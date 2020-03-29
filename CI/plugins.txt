@@ -52,3 +52,7 @@ pipeline-stage-step
 blueocean
 blueocean-autofavorite
 gitlab-plugin
+warnings-ng
+pipeline-utility-steps
+nexus-artifact-uploader
+jacoco
