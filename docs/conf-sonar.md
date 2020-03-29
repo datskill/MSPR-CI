@@ -1,3 +1,5 @@
+<img src="https://github.com/datskill/MSPR-CI/blob/master/images/sonarqube.png" width="100">
+
 ## SonarQube
 
 Normalement, le container SonarQube est déjà lancé à l'adresse suivante : http://localhost:9000/. Si ce n'est pas le cas, éxécuter "docker-compose up -d"
