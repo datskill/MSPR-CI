@@ -38,7 +38,7 @@ pipeline {
       }
     }
   }
-  stage("publish to nexus") {
+   stage("publish to nexus") {
               steps {
                   script {
                       // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
@@ -81,4 +81,4 @@ pipeline {
               }
 }
 }
-
+}
