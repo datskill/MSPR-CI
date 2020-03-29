@@ -37,10 +37,10 @@ pipeline {
                 recordIssues(
                         enabledForFailure: true, aggregatingResults: false,
                         tools: [
-                                [tool:[java(), checkStyle(pattern: '**/target/checkstyle-result.xml', reportEncoding: 'UTF-8')]],
-                                [tool:[java(), pmdParser(pattern: '**/target/pmd.xml', reportEncoding: 'UTF-8')]],
-                                [tool: [java(), cpd(pattern: '**/target/cpd.xml', reportEncoding: 'UTF-8')]],
-                                [tool: [java(), spotBugs(pattern: '**/target/spotbugsXml.xml')]]
+                                [tool:[$class: checkStyle(pattern: '**/target/checkstyle-result.xml', reportEncoding: 'UTF-8')]],
+                                [tool:[$class: pmdParser(pattern: '**/target/pmd.xml', reportEncoding: 'UTF-8')]],
+                                [tool: [$class: cpd(pattern: '**/target/cpd.xml', reportEncoding: 'UTF-8')]],
+                                [tool: [$class: spotBugs(pattern: '**/target/spotbugsXml.xml')]]
                         ]
                 )
             }
