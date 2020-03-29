@@ -100,4 +100,4 @@ Jenkins est maintenant configuré.
 
 Vous pouvez passer à l'installation de **SonarQube**
 
-[Instalation et configuration de SonarQube](./conf-sonar.md)
+[Installation et configuration de SonarQube](./conf-sonar.md)
