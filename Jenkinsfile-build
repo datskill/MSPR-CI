@@ -33,7 +33,7 @@ pipeline {
             }
         stage('Checkstyle') {
                    steps {
-                       // sh "mvn checkstyle:check"
+                        sh "mvn checkstyle:check"
                         recordIssues(
     enabledForFailure: true, aggregatingResults: true, 
     tools: [java(), checkStyle(pattern: '**/target/checkstyle-result.xml', reportEncoding: 'UTF-8')]
