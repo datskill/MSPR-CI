@@ -1,9 +1,9 @@
 Dans un soucis d'automatisation et de rapidité, nous avons crée notre propre image Jenkins qui sera construit dans un Docker-Compose qui est aussi produit par nos soins.
 
 ### Construction de l'image Jenkins
-Vous retrouverez dans le répertoire front, dans le dossier "CI", un fichier **Dockerfile**, c'est ce fichier qui permet de construire l'image Jenkins. 
+Vous retrouverez dans le dossier "CI", un fichier **Dockerfile**, c'est ce fichier qui permet de construire l'image Jenkins. 
 
-- Pour constuire l'image, placez vous dans le répertoire "CI" du projet Front et tapez la commande suivante
+- Pour constuire l'image, placez vous dans le répertoire "CI" du projet et tapez la commande suivante
 
 - `docker build -t custom/jenkins .`
 
@@ -15,7 +15,7 @@ Vous retrouverez dans le répertoire front, dans le dossier "CI", un fichier **D
 
 - `docker-compose up -d`
 
-- (L'éxécution du docker compose créera aussi un container SonarQube mais nous y reviendrons plus tard)
+- L'éxécution du docker-compose créera tous les containers nécessaires au projet (Jenkins, SonarQube, MySQL, Nexus OSS)
 
 - Vous pouvez maintenant vous rendre à l'adresse suivante "http://localhost:8181". Il vous faudra attendre quelques minutes que Jenkins se lance. 
 
@@ -25,13 +25,13 @@ Vous retrouverez dans le répertoire front, dans le dossier "CI", un fichier **D
 
 - **Mots de passe** : `admin`
 
-- Jenkins est automatiquement configuré avec les plugins nécessaire au front (nodeJS + SonarQube). 
+- Jenkins est automatiquement configuré avec les plugins nécessaires.
 
 Maintenant, il faut créer un build Jenkins qui analyse le code. 
 
 - Dans le menu principal de Jenkins, cliquez sur "**New Item**" dans le bandeau de gauche
 
-Entrez le nom du build : "**maintenance-back**"
+Entrez le nom du build : "**preudhomme-erp**"
 
 - Cliquez sur "**Multibranch Pipeline**"
 
@@ -39,7 +39,7 @@ Entrez le nom du build : "**maintenance-back**"
 
 - Dans la configuration du build, allez dans la section "**Branches Sources**"
 
-- Rentrez l'url du dépot git "**https://github.com/datskill/maintenance-front**" dans "**Repository HTTPS URL**"
+- Rentrez l'url du dépot git "**https://github.com/datskill/MSPR-CI**" dans "**Repository HTTPS URL**"
 
 - Dans la section "**Scan Repository Triggers**"  cochez la case "**Periodically if not otherwise run**"
 
@@ -48,9 +48,10 @@ Entrez le nom du build : "**maintenance-back**"
 Le build Jenkins éxécutera les étapes suivantes : 
 
 - Installation des dépendances du projet
-- Analyse du code sur SonarQube (le build s'arrêtera si une erreur apparait sur Sonar)
 - Build de l'application
+- Analyse du code (Checkstyle, PMD...) et génération des rapports
 - Exécution des tests
+- Analyse du code sur SonarQube (le build s'arrêtera si une erreur apparait sur Sonar)
 
 Le jenkins analysera toutes les branches "actives" du projet mais aussi les Pull Request de Github
 
@@ -64,7 +65,7 @@ Il reste cependant une manipulation à effectuer pour configurer Maven
 
 - Cherchez la section "**Maven", cliquez sur "Add Maven Installation**"
 
-- Dans "**Name**", rentrez : "**apache-maven-3.6.3**"
+- Dans "**Name**", rentrez : "**maven**"
 
 - Cliquez sur "**Apply**" puis "**Save**" pour enregistrer
 
