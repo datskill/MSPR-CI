@@ -63,7 +63,17 @@
                     <failOnViolation>false</failOnViolation>
                 </configuration>
             </plugin>
-        </plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.11.0</version>
+            </plugin>
+            <plugin>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-maven-plugin</artifactId>
+            <version>4.0.0</version>
+            </plugin>
+    </plugins>
     </reporting>
     <build>
         <plugins>
