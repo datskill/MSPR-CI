@@ -1,4 +1,4 @@
-<img src="https://github.com/datskill/MSPR-CI/blob/master/images/sonarqube.png" width="100">
+<img src="https://github.com/datskill/MSPR-CI/blob/master/images/sonarqube.png" width="300">
 
 ## SonarQube
 
