@@ -34,7 +34,10 @@ pipeline {
         stage('Checkstyle') {
                    steps {
                        // sh "mvn checkstyle:check"
-                        recordIssues(tools: [checkStyle(reportEncoding: 'UTF-8')])
+                        recordIssues(
+    enabledForFailure: true, aggregatingResults: true, 
+    tools: [java(), checkStyle(pattern: 'checkstyle-result.xml', reportEncoding: 'UTF-8')]
+)
                     }
         }
           stage('SonarQube analysis') {
