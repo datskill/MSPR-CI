@@ -121,19 +121,6 @@ Docker est maintenant installé.
 
  Docker est maintenant installé.
  
- 
-### Lancer la base MySQL
-  Afin de lancer la base **MySQL**, vous retrouverez dans le dossier "**maintenance**" un script "**prepare_env.sh**". 
-  
-  Si vous êtes sur Linux ou sur Windows avec un BASH vous devez : 
-  
-  - Vous postionnez dans le dossier "**maintenance**" avec `cd maintenance`(en supposant que vous êtes à la racine du projet)
-  
-  - Executez la commande suivante : `chmod +x ./prepare_env.sh` pour donner les droits sur le fichier
-  
-  - Executer `./prepare_env.sh`. La base de données est désormais accessible à l'adresse suivante : **http://localhost:3306**
-  
-  Si vous êtes sur Windows et que vous n'avez pas de bash disponible, lancez "**Docker ToolBox**" et éxécutez les commandes du script une par une. 
 
 ### Jenkins
 Vous pouvez passez à l'étape de l'installation et de la confguration de Jenkins
