@@ -38,15 +38,17 @@ pipeline {
                         enabledForFailure: true, aggregatingResults: true,
                         tools: [java(), checkStyle(pattern: '**/target/checkstyle-result.xml', reportEncoding: 'UTF-8')]
                 )
+                sleep(10)
                 recordIssues(
                         enabledForFailure: true, aggregatingResults: true,
                         tools: [java(), pmdParser(pattern: '**/target/pmd.xml', reportEncoding: 'UTF-8')]
                 )
-
+                sleep(10)
                 recordIssues(
                         enabledForFailure: true, aggregatingResults: true,
                         tools: [java(), cpd(pattern: '**/target/cpd.xml', reportEncoding: 'UTF-8')]
                 )
+                sleep(10)
                 recordIssues(
                         enabledForFailure: true, aggregatingResults: true,
                         tools: [java(), spotBugs(pattern: '**/target/spotbugsXml.xml')]
