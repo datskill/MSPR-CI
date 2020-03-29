@@ -1,4 +1,4 @@
-![Jenkins](https://github.com/datskill/MSPR-CI/blob/master/images/jenkins.png)
+![Jenkins](https://github.com/datskill/MSPR-CI/blob/master/images/jenkins.png | width=100)
 
 Dans un soucis d'automatisation et de rapidité, nous avons crée notre propre image Jenkins qui sera construit dans un Docker-Compose qui est aussi produit par nos soins.
 
