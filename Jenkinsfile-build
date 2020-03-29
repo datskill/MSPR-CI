@@ -34,10 +34,9 @@ pipeline {
         stage('Checkstyle') {
             steps {
                 sh "mvn checkstyle:checkstyle pmd:pmd pmd:cpd com.github.spotbugs:spotbugs-maven-plugin:3.1.7:spotbugs"
-                recordIssues enabledForFailure: true, tools: [[tool: [$class: 'CheckStyle']]]
-                recordIssues enabledForFailure: true, tools: [[tool: [$class: 'SpotBugs']]]
-                recordIssues enabledForFailure: true, tools: [[pattern: '**/target/cpd.xml', tool: [$class: 'Cpd']]]
-                recordIssues enabledForFailure: true, tools: [[pattern: '**/target/pmd.xml', tool: [$class: 'Pmd']]]
+                recordIssues tools: [java(), javaDoc(),
+                                     checkStyle(), spotBugs(pattern: 'target/spotbugsXml.xml'), pmdParser(pattern: 'target/pmd.xml'), cpd(pattern: 'target/cpd.xml'),
+                                     taskScanner(highTags:'FIXME', normalTags:'TODO', includePattern: '**/*.java', excludePattern: 'target/**/*'), ]
             }
         }
         stage('SonarQube analysis') {
