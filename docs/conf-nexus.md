@@ -1,3 +1,5 @@
+<img src="https://github.com/datskill/MSPR-CI/blob/master/images/nexus3.png" width="100">
+
 # Configuration de Nexus Repository OSS
 
 Le container Docker "**Nexus3**" est normalement déjà allumé, sinon exécutez `docker-compose up -d`
