@@ -31,14 +31,11 @@ pipeline {
                 //junit '**/build/test-results/test/*.xml'
                 }
             }
-        stage("Generating Checkstyles") {
-            steps {
-                sh "mvn checkstyle:checkstyle"
-        def checkstyle = scanForIssues tool: [$class: 'CheckStyle'], pattern: '**/target/checkstyle-result.xml'
-        publishIssues issues:[checkstyle]
-            }
-            
-        }
+        stage('Checkstyle') {
+                    steps {
+                        sh "mvn checkstyle:check"
+                        recordIssues(tools: [checkStyle(reportEncoding: 'UTF-8')])
+                    }
           stage('SonarQube analysis') {
       steps {
     withSonarQubeEnv(credentialsId: '', installationName: 'sonarqube') { // You can override the credential to be used
