@@ -2,6 +2,8 @@
 CI/sonarqube
 CI/jenkins
 CI/.mysql-data
+/images/.DS_Store
+.DS_Store
 
 ## Java Sources
 
