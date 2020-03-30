@@ -4,7 +4,6 @@ Projet ERP PreudHomme
 
 ## Sommaire
 
-- [Comment bien démarrer sur le projet](#pour-bien-démarrer-sur-le-projet)
 - [Les procédures GIT](#procédure-GIT)
 - [Recommendations sur les Merges](#Merge-Request)
 - [Configuration de l'environnement de développement](#intégration-continue)
@@ -12,14 +11,7 @@ Projet ERP PreudHomme
 - [Configurer SonarQube](#sonarqube)
 - [Configurer Nexus](#nexus)
 
-## Pour bien démarrer sur le projet
 
-
-### Démarrer le projet
-
-- Cloner le projet avec git `git clone https://github.com/datskill/MSPR-CI`
-- Positionnez vous dans le répertoire du projet `cd MSPR-CI`
-- Cliquer sur "Run" dans IntelliJ pour démarrer le projet. (Assurez-vous d'avoir installer les prérequis dans "Configurer un environnement de développement)
 ## Procédure GIT
 
 ### Pour développer une nouvelle feature
