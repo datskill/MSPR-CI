@@ -33,7 +33,7 @@ Maintenant, il faut créer un build Jenkins qui analyse le code.
 
 - Dans le menu principal de Jenkins, cliquez sur "**New Item**" dans le bandeau de gauche
 
-Entrez le nom du build : "**preudhomme-erp**"
+Entrez le nom du build : "**preudhomme-erp-main-build**"
 
 - Cliquez sur "**Multibranch Pipeline**"
 
@@ -41,9 +41,11 @@ Entrez le nom du build : "**preudhomme-erp**"
 
 - Dans la configuration du build, allez dans la section "**Branches Sources**"
 
-- Rentrez l'url du dépot git "**https://github.com/datskill/MSPR-CI**" dans "**Repository HTTPS URL**"
+- Rentrez l'url du dépot git "**https://github.com/AntoineTohan/preudhomme-erp-back**" dans "**Repository HTTPS URL**"
 
 - Dans la section "**Scan Repository Triggers**"  cochez la case "**Periodically if not otherwise run**"
+
+- Dans la section "Build Configuration", dans "Script path" mettez "jenkinsfile-build"
 
 - Cliquez sur Save puis Apply
 
@@ -56,6 +58,26 @@ Le build Jenkins éxécutera les étapes suivantes :
 - Analyse du code sur SonarQube (le build s'arrêtera si une erreur apparait sur Sonar)
 
 Le jenkins analysera toutes les branches "actives" du projet mais aussi les Pull Request de Github
+
+Maintenant, il faut créer un build Jenkins qui va upload sur le Nexus. 
+
+- Dans le menu principal de Jenkins, cliquez sur "**New Item**" dans le bandeau de gauche
+
+Entrez le nom du build : "**preudhomme-erp-build-upload**"
+
+- Cliquez sur "**Pipeline**"
+
+- Cliquez sur "**Ok**"
+
+- Dans la configuration du build, allez dans la section "**Pipeline**"
+
+- Choissisez "Pipeline Script from SCM" puis "Git"
+
+- Rentrez l'url du dépot git "**https://github.com/AntoineTohan/preudhomme-erp-back**" dans "**Repository URL**"
+
+- Dans "Script path" mettez "jenkinsfile-nexus"
+
+- Cliquez sur Save puis Apply
 
 **/!\ Nous utilions l'API Github, de ce fait il peut y avoir une file d'attente pour build.**
 
